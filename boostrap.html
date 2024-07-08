@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .model {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);   
+      }
+      .model-content {
+        background-color: #fefefe;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+      }
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      .title {
+       color: red;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#openModelBtn').click(function(){
+          $('#titleContent').css('color', 'blue');
+        })
+        $('.close').click(function(){
+          $('#myModel').css('display', 'none');
+        })
+      })
+    </script>
+  </head>
+<body>
+  <h1 id="titleContent" class="title" >Dynamic Class name add</h1>
+  <button id="openModelBtn" >Open Model</button>
+
+  <div id="myModel" class="model">
+    <div class="model-content">
+      <span class="close">X</span>
+      <p>Content of model</p>
+    </div>
+  </div>
+</body>
+</html>
